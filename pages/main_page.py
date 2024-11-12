@@ -65,7 +65,7 @@ class MainPage(Page):
         for price_card in product_cards:
             price_txt = price_card.text
 
-            #convert to integer
+
             covert_price = int(price_txt.replace('AED ', '').replace(',', ''))
             assert 1200000 <= covert_price <= 2000000, f"Price {covert_price} is not within the range (1200000 - 2000000)"
 
