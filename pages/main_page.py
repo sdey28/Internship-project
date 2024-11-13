@@ -24,12 +24,15 @@ class MainPage(Page):
 
     def input_username(self):
         self.driver.find_element(*self.USERNAME_FIELD).send_keys("shuchita.dey@gmail.com")
+        sleep(7)
 
     def input_password(self):
-       self.driver.find_element(*self.PASSWORD_FIELD).send_keys("Sawgoto357")
+        self.driver.find_element(*self.PASSWORD_FIELD).send_keys("Sawgoto357")
+        sleep(7)
 
     def verify_continue_btn(self):
         self.driver.find_element(*self.CONTINUE_BTN).click()
+        sleep(5)
 
     def side_nav(self):
         self.driver.find_element(*self.SIDE_NAV_OFF_PLAN).click()
