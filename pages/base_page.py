@@ -3,6 +3,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 
+from support.logger import logger
 
 class Page:
 
@@ -14,6 +15,7 @@ class Page:
         self.driver.get(url)
 
     def find_element(self, *locator):
+        logger.info(f'Searching for element by {locator}')
         return self.driver.find_element(*locator)
 
     def find_elements(self, *locator):
@@ -24,6 +26,8 @@ class Page:
 
     def input_text(self, text, *locator):
         self.driver.find_element(*locator).send_keys(text)
+        logger.info(f'Inputting text for element by {locator}')
+        self.find_element(*locator).send_keys(text)
 
     def verify_url(self, expected_url):
         current_url = self.driver.current_url
